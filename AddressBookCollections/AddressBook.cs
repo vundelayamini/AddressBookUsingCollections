@@ -7,26 +7,19 @@ namespace AddressBookCollections
 {
     class AddressBook : IContact
     {
-            private Dictionary<string, Contact> addressBook = new Dictionary<string, Contact>();
-            private Dictionary<string, AddressBook> addressBookDictionary = new Dictionary<string, AddressBook>();
+        private Dictionary<string, Contact> addressBook = new Dictionary<string, Contact>();//create dictionary
+        private Dictionary<string, AddressBook> addressBookDictionary = new Dictionary<string, AddressBook>();//create dictionary for addressbookdictionary        private Dictionary<Contact, string> stateDictionary = new Dictionary<Contact, string>();
+        private Dictionary<Contact, string> cityDictionary = new Dictionary<Contact, string>();//create dictionary for city
+        private Dictionary<Contact, string> stateDictionary = new Dictionary<Contact, string>();//create dicionay for state
+        public void AddContact(string firstName, string lastName, string address, string city, string state, string email, int zip, long phoneNumber, string bookName)//constructor
+        {
 
-            public void AddContact(string firstName, string lastName, string address, string city, string state, string email, int zip, long phoneNumber, string bookName)
-            {
 
+            Contact contact = new Contact(firstName, lastName, address, city, state, email, zip, phoneNumber);
+            addressBookDictionary[bookName].addressBook.Add(contact.FirstName + " " + contact.LastName, contact);
+            Console.WriteLine("\nAdded Succesfully. \n");
 
-                try
-                {
-                    Contact contact = new Contact(firstName, lastName, address, city, state, email, zip, phoneNumber);
-                    addressBookDictionary[bookName].addressBook.Add(contact.FirstName, contact);
-                    Console.WriteLine("\nAdded Succesfully. \n");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                Program.AddcontactConsole();
-                }
-                Console.WriteLine("\nAdded Succesfully. \n");
-            }
+        }
         public void ViewContact(string name, string bookName)
         {
             foreach (KeyValuePair<string, Contact> item in addressBookDictionary[bookName].addressBook)
@@ -43,7 +36,7 @@ namespace AddressBookCollections
                     Console.WriteLine("Phone Number : " + item.Value.PhoneNumber + "\n");
                 }
             }
-            
+
 
         }
         public void ViewContact(string bookName)//Add New Contact details
@@ -60,7 +53,7 @@ namespace AddressBookCollections
                 Console.WriteLine("Phone Number : " + item.Value.PhoneNumber + "\n");
             }
         }
-        public void EditContact(string name,string bookName)//Edit the existing contact details
+        public void EditContact(string name, string bookName)//Edit the existing contact details
         {
             {
                 foreach (KeyValuePair<string, Contact> item in addressBookDictionary[bookName].addressBook)
@@ -109,7 +102,7 @@ namespace AddressBookCollections
                 }
             }
         }
-        public void DeleteContact(string name,string bookName)//Delete a person using name
+        public void DeleteContact(string name, string bookName)//Delete a person using name
         {
             if (addressBookDictionary[bookName].addressBook.ContainsKey(name))
             {
@@ -152,7 +145,39 @@ namespace AddressBookCollections
             }
             return false;
         }
+    
+    public List<Contact> GetListOfDictctionaryKeys2(Dictionary<string, Contact> d)
+    {
+        List<Contact> book = new List<Contact>();
+        foreach (var value in d.Values)
+        {
+            book.Add(value);
+        }
+        return book;
+    }
+    public void SearchPersonByCity(string city)//search a person in city
+        {
+            foreach (AddressBook addressbookobj in addressBookDictionary.Values)
+            {
+                List<Contact> contactList = GetListOfDictctionaryKeys2(addressbookobj.addressBook);
+                foreach (Contact contact in contactList.FindAll(c => c.City.Equals(city)).ToList())
+                {
+                    Console.WriteLine(contact.ToString());
+                }
+            }
+        }
+        public void SearchPersonByState(string state)//Search a person in state
+        {
+            foreach (AddressBook addressbookobj in addressBookDictionary.Values)
+            {
+                List<Contact> contactList = GetListOfDictctionaryKeys2(addressbookobj.addressBook);
+                foreach (Contact contact in contactList.FindAll(c => c.State.Equals(state)).ToList())
+                {
+                    Console.WriteLine(contact.ToString());
+                }
+            }
 
 
+        }
     }
 }
