@@ -197,8 +197,42 @@ namespace AddressBookCollections
                     }
                 }
             }
+        public void DisplayCountByCityandState()// to get numberof contact persons that is count by City or State
+        {
+            CreateCityDictionary();
+            CreateStateDictionary();
+            Dictionary<string, int> countByCity = new Dictionary<string, int>();
+            Dictionary<string, int> countByState = new Dictionary<string, int>();
+            foreach (var obj in addressBookDictionary.Values)
+            {
+                foreach (var person in obj.cityDictionary)
+                {
+                    countByCity.TryAdd(person.Value, 0);
+                    countByCity[person.Value]++;
+                }
+            }
+            Console.WriteLine("City wise count :");//count for city
+            foreach (var person in countByCity)
+            {
+                Console.WriteLine(person.Key + ":" + person.Value);
+            }
+            foreach (var obj in addressBookDictionary.Values)
+            {
+                foreach (var person in obj.stateDictionary)
+                {
+                    countByState.TryAdd(person.Value, 0);
+                    countByState[person.Value]++;
+                }
+            }
+            Console.WriteLine("State wise count :");//count for state
+            foreach (var person in countByState)
+            {
+                Console.WriteLine(person.Key + ":" + person.Value);
+            }
+        }
 
 
-        
+
+
     }
 }
