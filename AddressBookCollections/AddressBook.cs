@@ -176,8 +176,29 @@ namespace AddressBookCollections
                     Console.WriteLine(contact.ToString());
                 }
             }
-
-
         }
+            public void CreateCityDictionary()//view persons in city
+            {
+                foreach (AddressBook addressBookObj in addressBookDictionary.Values)
+                {
+                    foreach (Contact contact in addressBookObj.addressBook.Values)
+                    {
+                        addressBookObj.cityDictionary.Add(contact, contact.City);
+                    }
+                }
+            }
+            public void CreateStateDictionary()//view persons in state
+            {
+                foreach (AddressBook addressBookObj in addressBookDictionary.Values)
+                {
+                    foreach (Contact contact in addressBookObj.addressBook.Values)
+                    {
+                        addressBookObj.stateDictionary.Add(contact, contact.State);
+                    }
+                }
+            }
+
+
+        
     }
 }
