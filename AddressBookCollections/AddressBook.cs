@@ -8,7 +8,7 @@ namespace AddressBookCollections
     class AddressBook : IContact
     {
         private Dictionary<string, Contact> addressBook = new Dictionary<string, Contact>();//create dictionary
-        private Dictionary<string, AddressBook> addressBookDictionary = new Dictionary<string, AddressBook>();//create dictionary for addressbookdictionary        private Dictionary<Contact, string> stateDictionary = new Dictionary<Contact, string>();
+        private Dictionary<string, AddressBook> addressBookDictionary = new Dictionary<string, AddressBook>();//create dictionary for addressbookdictionary        
         private Dictionary<Contact, string> cityDictionary = new Dictionary<Contact, string>();//create dictionary for city
         private Dictionary<Contact, string> stateDictionary = new Dictionary<Contact, string>();//create dicionay for state
         public void AddContact(string firstName, string lastName, string address, string city, string state, string email, int zip, long phoneNumber, string bookName)//constructor
