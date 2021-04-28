@@ -1,0 +1,12 @@
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\obj\Debug\netcoreapp2.1\AddressBookCollections.csprojAssemblyReference.cache
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\obj\Debug\netcoreapp2.1\AddressBookCollections.AssemblyInfoInputs.cache
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\obj\Debug\netcoreapp2.1\AddressBookCollections.AssemblyInfo.cs
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\obj\Debug\netcoreapp2.1\AddressBookCollections.csproj.CoreCompileInputs.cache
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\bin\Debug\netcoreapp2.1\AddressBookCollections.deps.json
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\bin\Debug\netcoreapp2.1\AddressBookCollections.runtimeconfig.json
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\bin\Debug\netcoreapp2.1\AddressBookCollections.runtimeconfig.dev.json
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\bin\Debug\netcoreapp2.1\AddressBookCollections.dll
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\bin\Debug\netcoreapp2.1\AddressBookCollections.pdb
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\obj\Debug\netcoreapp2.1\AddressBookCollections.dll
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\obj\Debug\netcoreapp2.1\AddressBookCollections.pdb
+C:\Users\mahesh\source\repos\AddressBookCollections\AddressBookCollections\obj\Debug\netcoreapp2.1\AddressBookCollections.genruntimeconfig.cache
